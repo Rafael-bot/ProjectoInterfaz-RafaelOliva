@@ -3,7 +3,17 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebaseConfig: {
+    apiKey: 'AIzaSyAYd5GFOaV3WGa_F8nlGDDQGW5Y3Kmkb7Y',
+    authDomain: 'ticklist-interfaz.firebaseapp.com',
+    databaseURL: 'https://ticklist-interfaz-default-rtdb.europe-west1.firebasedatabase.app',
+    projectId: 'ticklist-interfaz',
+    storageBucket: 'ticklist-interfaz.appspot.com',
+    messagingSenderId: '110064557297',
+    appId: '1:110064557297:web:30ed6a5a16ff3aa110dd50',
+    measurementId: 'G-GQM8X16P6G'
+  }
 };
 
 /*
