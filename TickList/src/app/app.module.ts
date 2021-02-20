@@ -7,6 +7,8 @@ import { ClaseComponent } from './clase/clase.component';
 import { FormsModule } from '@angular/forms';
 import { NavComponent } from './nav/nav.component';
 
+import {MatToolbarModule} from '@angular/material/toolbar'; 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +18,8 @@ import { NavComponent } from './nav/nav.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
