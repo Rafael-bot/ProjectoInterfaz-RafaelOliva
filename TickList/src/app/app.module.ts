@@ -1,25 +1,19 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { IndexComponent } from './index/index.component';
-import { ClaseComponent } from './clase/clase.component';
-import { FormsModule } from '@angular/forms';
-import { NavComponent } from './nav/nav.component';
 
-import {MatToolbarModule} from '@angular/material/toolbar'; 
+import { AngularFireModule } from '@angular/fire';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    IndexComponent,
-    ClaseComponent,
-    NavComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    MatToolbarModule
+    AppRoutingModule,
+    AngularFireModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -5,14 +5,14 @@
 export const environment = {
   production: false,
   firebaseConfig: {
-    apiKey: 'AIzaSyAYd5GFOaV3WGa_F8nlGDDQGW5Y3Kmkb7Y',
-    authDomain: 'ticklist-interfaz.firebaseapp.com',
-    databaseURL: 'https://ticklist-interfaz-default-rtdb.europe-west1.firebasedatabase.app',
-    projectId: 'ticklist-interfaz',
-    storageBucket: 'ticklist-interfaz.appspot.com',
-    messagingSenderId: '110064557297',
-    appId: '1:110064557297:web:30ed6a5a16ff3aa110dd50',
-    measurementId: 'G-GQM8X16P6G'
+    apiKey: "AIzaSyCn7Xa0C2cAdxrteA2ELI1dndV06PsRUy8",
+    authDomain: "ticklist-75144.firebaseapp.com",
+    databaseURL: "https://ticklist-75144-default-rtdb.europe-west1.firebasedatabase.app",
+    projectId: "ticklist-75144",
+    storageBucket: "ticklist-75144.appspot.com",
+    messagingSenderId: "230971807725",
+    appId: "1:230971807725:web:b6d72d5872b69c44b779e4",
+    measurementId: "G-BYGKZYBS1X"
   }
 };
 
