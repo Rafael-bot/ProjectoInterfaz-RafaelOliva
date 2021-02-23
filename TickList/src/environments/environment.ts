@@ -13,7 +13,8 @@ export const environment = {
     messagingSenderId: "230971807725",
     appId: "1:230971807725:web:b6d72d5872b69c44b779e4",
     measurementId: "G-BYGKZYBS1X"
-  }
+  },
+  title: 'TickList-DEV'
 };
 
 /*
