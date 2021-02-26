@@ -1,0 +1,8 @@
+<div *ngIf="auth.user | async as user; else login">
+    <button routerLink="/clases">Comenzar!</button>
+</div>
+
+<ng-template #login>
+    <button routerLink="/login">Comenzar!</button>
+</ng-template>
+

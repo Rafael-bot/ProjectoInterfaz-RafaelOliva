@@ -1,0 +1,11 @@
+<form action="/">
+    <label for="email">Email</label>
+    <input type="email" name="email" [(ngModel)]="auth.email" required>
+
+    <br>
+
+    <label for="contraseña">Contraseña</label>
+    <input type="password" name="contraseña" [(ngModel)]="auth.contrase" required>
+
+    <button type="submit" routerLink="/" (click)="auth.login()">Login</button>
+</form>

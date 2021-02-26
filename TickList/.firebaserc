@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "ticklist-75144"
+  },
+  "targets": {
+    "ticklist-75144": {
+      "hosting": {
+        "TickList": [
+          "ticklist-75144"
+        ]
+      }
+    }
   }
 }
