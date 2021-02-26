@@ -7,5 +7,5 @@
     <label for="contraseña">Contraseña</label>
     <input type="password" name="contraseña" [(ngModel)]="auth.contrase" required>
 
-    <button type="submit" routerLink="/" (click)="auth.login()">Login</button>
+    <a routerLink='/clases'><button type="submit" (click)="auth.login()">Login</button></a>
 </form>

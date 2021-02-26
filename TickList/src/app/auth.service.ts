@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { ToastrService } from 'ngx-toastr';
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -11,7 +12,7 @@ export class AuthService {
   contrase = '';
   authUser = null;
 
-  constructor(public auth: AngularFireAuth) { }
+  constructor(public auth: AngularFireAuth, private toastr: ToastrService) { }
 
   user = this.auth.authState.pipe(map(authState => {
     console.log('authState: ', authState);
@@ -25,16 +26,20 @@ export class AuthService {
   login(){
     this.auth.signInWithEmailAndPassword(this.email, this.contrase)
     .then( user => {
-      console.log('Logado como ', user);
-    })    
-    .catch( error =>{
-      console.log('Error en el login!!!');
+      this.toastr.success('Login realizado','LOGIN')
     })
+    .catch( error =>{
+      if(error.code==='auth/wrong-password'){
+        this.toastr.error('La contraseña es incorrecta','ERRO LOGIN')
+      } else if(error.code==='auth/user-not-found'){
+        this.toastr.error('El email es invalido','ERROR LOGIN')
+      } 
+    });
   }
 
   logout() {
-    console.log('Logout!!!')
-    this.auth.signOut();
+    this.auth.signOut()
+    this.toastr.success('Logout realizado','LOG OUT')
   }
 
 }
