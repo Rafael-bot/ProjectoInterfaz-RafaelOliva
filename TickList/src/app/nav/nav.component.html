@@ -1,61 +1,7 @@
-<!-- <nav class="navbar navbar-light bg-light" *ngIf="auth.user | async as user; else login">
-    <a class="navbar-brand" routerLink="/clases/">
-        <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top"
-            alt="">
-        Bootstrap
-    </a>
-    <div>{{user.email}}</div>
-    <div>
-        <a href="/"><button type="submit" (click)="auth.logout()"> Logout</button></a>
-    </div>
-</nav> -->
-<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="auth.user | async as user; else login">
-    <div class="container-fluid">
-        <a class="navbar-brand" routerLink="/clases/">
-            <img src="./assets/Img/logo-sin-fondo.png" width="30" height="30" class="d-inline-block align-top" alt="">
-            TickList
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">{{user.email}}</a>
-            </div>
-            <div class="navbar-nav">
-                <a href="/"><button type="submit" (click)="auth.logout()"> Logout</button></a>
-            </div>
-        </div>
-    </div>
-</nav>
-
-
-<ng-template #login>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" routerLink="/clases/">
-                <img src="./assets/Img/logo-sin-fondo.png" width="30" height="30" class="d-inline-block align-top"
-                    alt="">
-                TickList
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-link" href="/login">Login</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-</ng-template> -->
-
 <nav class="navbar navbar-inverse bg-light" *ngIf="auth.user | async as user; else login">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" routerLink="/clases/">
+            <a class="navbar-brand" routerLink="/clases/" id="tituloLogo">
                 <img src="./assets/Img/logo-sin-fondo.png" width="30" height="30" class="d-inline-block align-top"
                     alt="">
                 TickList
@@ -65,7 +11,8 @@
             <li>{{user.email}}</li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="/" (click)="auth.logout()"><span class=""></span> Log Out</a></li>
+            <!--<li><a href="/" (click)="auth.logout()"><span class=""></span> Log Out</a></li>-->
+            <li><a href="/login" (click)="auth.logout()"><button type="button" class="btn btn-outline-info"><span class=""></span> Log Out</button></a></li>
         </ul>
     </div>
 </nav>
@@ -81,7 +28,7 @@
                 </a>
             </div>
             <ul class="nav navbar-nav navbar-right">
-                <li ><a href="/login"><span class=""></span> Login</a></li>
+                <li ><a href="/login"><button type="button" class="btn btn-outline-info"><span class=""></span> Login</button></a></li>
             </ul>
         </div>
     </nav>
