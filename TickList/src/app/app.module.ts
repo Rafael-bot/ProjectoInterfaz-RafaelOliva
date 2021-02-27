@@ -41,7 +41,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     ToastrModule.forRoot({
       timeOut: 2000,
-      positionClass: 'toast-top-right'
+      positionClass: 'toast-top-center'
     }),
     CommonModule,
     BrowserAnimationsModule,

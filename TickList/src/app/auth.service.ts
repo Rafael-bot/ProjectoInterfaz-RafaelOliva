@@ -26,7 +26,7 @@ export class AuthService {
   login(){
     this.auth.signInWithEmailAndPassword(this.email, this.contrase)
     .then( user => {
-      this.toastr.success('Login realizado','LOGIN')
+      this.toastr.success('Login realizado como '+user.user?.email,'LOGIN')
     })
     .catch( error =>{
       if(error.code==='auth/wrong-password'){
@@ -39,7 +39,7 @@ export class AuthService {
 
   logout() {
     this.auth.signOut()
-    this.toastr.success('Logout realizado','LOG OUT')
+    this.toastr.success('Logout realizado como ','LOG OUT')
   }
 
 }
