@@ -35,7 +35,8 @@
         }
       ]
     }
-  ],"hosting": [
+  ],
+  "hosting": [
     {
       "target": "TickList",
       "public": "dist/TickList",
