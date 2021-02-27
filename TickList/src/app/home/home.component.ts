@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -8,9 +9,13 @@ import { AuthService } from '../auth.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(public auth: AuthService) { }
+  constructor(public auth: AuthService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
+  }
+
+  alarmLogin(){
+    this.toastr.warning('No estas logueado','Login')
   }
 
 }
