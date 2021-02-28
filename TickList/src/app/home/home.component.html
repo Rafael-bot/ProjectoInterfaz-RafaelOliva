@@ -1,8 +1,21 @@
-<div *ngIf="auth.user | async as user; else login">
-    <button routerLink="/clases">Comenzar!</button>
+<div class="container">
+    <div class="row m-3">
+        <div class="col-12 home">
+            <h1>TickList</h1>
+        </div>
+
+        <div class="col-12">
+            <p>Take your class!</p>
+        </div>
+        <div *ngIf="auth.user | async as user; else login" class="col-12">
+            <button routerLink="/clases" class="btn btn-info">Start!</button>
+        </div>
+
+        <ng-template #login>
+            <div class="col-12">
+                <button (click)="alarmLogin()" routerLink="/login" class="btn btn-info">Start!</button>
+            </div>
+        </ng-template>
+    </div>
+
 </div>
-
-<ng-template #login>
-    <button (click)="alarmLogin()" routerLink="/login">Comenzar!</button>
-</ng-template>
-
