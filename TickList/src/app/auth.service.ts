@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { map } from 'rxjs/operators';
 
@@ -12,7 +13,7 @@ export class AuthService {
   contrase = '';
   authUser = null;
 
-  constructor(public auth: AngularFireAuth, private toastr: ToastrService) { }
+  constructor(public auth: AngularFireAuth, private toastr: ToastrService, private router: Router) { }
 
   user = this.auth.authState.pipe(map(authState => {
     console.log('authState: ', authState);
@@ -27,6 +28,7 @@ export class AuthService {
     this.auth.signInWithEmailAndPassword(this.email, this.contrase)
     .then( user => {
       this.toastr.success('Login realizado como '+user.user?.email,'LOGIN')
+      this.router.navigate(['/', 'clases']);
     })
     .catch( error =>{
       if(error.code==='auth/wrong-password'){
@@ -34,6 +36,7 @@ export class AuthService {
       } else if(error.code==='auth/user-not-found'){
         this.toastr.error('El email es invalido','ERROR LOGIN')
       } 
+      this.router.navigate(['/', 'login']);
     });
   }
 

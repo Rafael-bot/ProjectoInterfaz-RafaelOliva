@@ -22,7 +22,13 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 //Angular Material
-import {MatCardModule} from '@angular/material/card'; 
+import { MatCardModule } from '@angular/material/card';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatMenuModule} from '@angular/material/menu'; 
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatInputModule} from '@angular/material/input'; 
+import {MatButtonModule} from '@angular/material/button'; 
 
 @NgModule({
   declarations: [
@@ -47,7 +53,13 @@ import {MatCardModule} from '@angular/material/card';
     }),
     CommonModule,
     BrowserAnimationsModule,
-    MatCardModule
+    MatCardModule,
+    MatExpansionModule,
+    MatFormFieldModule,
+    MatMenuModule,
+    MatDatepickerModule,
+    MatInputModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

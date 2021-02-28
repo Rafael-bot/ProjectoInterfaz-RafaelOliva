@@ -1,15 +1,7 @@
-<!-- <div class="container">
-    <div class="row mb-3 w-50">
-      <div class="col-12 bg-primary">.col-12</div>
-    </div>
-    <div class="row mb-3 w-50">
-        <div class="col-12 bg-primary">.col-12</div>
-      </div>
-  </div> -->
 <div class="container">
   <div class="row m-3 center-block">
     <div class="col-12">
-      <a href="/clases/1">
+      <a href="/clases/1" class="style-none">
         <mat-card class="colorClases">
           <p class="text-center">1-B</p>
         </mat-card>
@@ -18,8 +10,31 @@
   </div>
   <div class="row m-3 center-block">
     <div class="col-12">
-      <button class="btn">
-      </button>
+      <mat-accordion>
+        <mat-expansion-panel>
+
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <button class="btn btn-sm btn-block button"><i class="fas fa-plus ico-plus text-success"></i></button>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <div class="reply-form" fxFlex="0 0 auto" fxLayout="row" fxLayoutAlign="center center">
+
+            <form #replyForm1="ngForm" fxFlex fxLayout="row" fxLayoutAlign="start center">
+              <div class="row m-3 center-block">
+                <input matInput>
+              </div>
+              <div class="row m-3 center-block">
+                <div class="col-12">
+                  <button class="btn btn-success btn-block my-auto py-revert ml-3 ">Add</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+
     </div>
   </div>
 </div>
