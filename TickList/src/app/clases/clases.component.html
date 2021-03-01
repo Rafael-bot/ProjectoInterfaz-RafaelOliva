@@ -1,9 +1,9 @@
-<div class="container">
-  <div class="row m-3 center-block">
+<div class="container" *ngIf="auth.user | async as user">
+  <div class="row m-3 center-block" *ngFor="let clase of classs">
     <div class="col-12">
       <a href="/clases/1" class="style-none">
         <mat-card class="colorClases">
-          <p class="text-center">1-B</p>
+          <p class="text-center">{{clase.nombre}}</p>
         </mat-card>
       </a>
     </div>
@@ -22,12 +22,12 @@
           <div class="reply-form" fxFlex="0 0 auto" fxLayout="row" fxLayoutAlign="center center">
 
             <form #replyForm1="ngForm" fxFlex fxLayout="row" fxLayoutAlign="start center">
-              <div class="row m-3 center-block">
-                <input matInput>
+              <div class="row m-3 center-block form-group">
+                <input matInput type="text" class="forms-control" placeholder="Class" [(ngModel)]="nombre" name="nombre" required>
               </div>
               <div class="row m-3 center-block">
                 <div class="col-12">
-                  <button class="btn btn-success btn-block my-auto py-revert ml-3 ">Add</button>
+                  <button class="btn btn-success btn-block my-auto py-revert ml-3 " (click)='agregarClase(user)'>Add</button>
                 </div>
               </div>
             </form>

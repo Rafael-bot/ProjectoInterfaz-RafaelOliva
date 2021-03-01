@@ -1,7 +1,7 @@
 <nav class="navbar navbar-inverse bg-light" *ngIf="auth.user | async as user; else login">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" routerLink="/clases/" id="tituloLogo">
+            <a class="navbar-brand" [routerLink]="['clases',user.uid]" id="tituloLogo">
                 <img src="./assets/Img/logo-sin-fondo.png" width="30" height="30" class="d-inline-block align-top"
                     alt="">
                 TickList
@@ -11,7 +11,6 @@
             <li>{{user.email}}</li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-            <!--<li><a href="/" (click)="auth.logout()"><span class=""></span> Log Out</a></li>-->
             <li><a href="/" (click)="auth.logout()"><button type="button" class="btn btn-outline-info"><span class=""></span> Log Out</button></a></li>
         </ul>
     </div>

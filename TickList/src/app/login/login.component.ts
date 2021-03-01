@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ToastrService } from 'ngx-toastr';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -12,6 +11,6 @@ export class LoginComponent implements OnInit {
   constructor(public auth: AuthService) {}
   
   ngOnInit(): void {
-  }
+  } 
 
 }

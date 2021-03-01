@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 
 import { NavComponent } from './nav/nav.component';
@@ -46,6 +47,7 @@ import {MatButtonModule} from '@angular/material/button';
     AngularFireAuthModule,
     AngularFirestoreModule,
     AngularFireStorageModule,
+    AngularFireDatabaseModule,
     FormsModule,
     ToastrModule.forRoot({
       timeOut: 2000,

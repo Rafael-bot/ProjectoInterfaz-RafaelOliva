@@ -8,7 +8,7 @@
             <p>Take your class!</p>
         </div>
         <div *ngIf="auth.user | async as user; else login" class="col-12">
-            <button routerLink="/clases" class="btn btn-info">Start!</button>
+            <button [routerLink]="['/clases',user.uid]" class="btn btn-info">Start!</button>
         </div>
 
         <ng-template #login>
