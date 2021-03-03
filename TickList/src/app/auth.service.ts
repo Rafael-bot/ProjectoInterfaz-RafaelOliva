@@ -38,7 +38,6 @@ export class AuthService {
           this.toastr.error('El email es invalido', 'ERROR LOGIN')
         }
       });
-      
     }
     
     logout() {
