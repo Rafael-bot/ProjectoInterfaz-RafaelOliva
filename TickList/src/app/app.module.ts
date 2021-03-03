@@ -30,7 +30,8 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatInputModule} from '@angular/material/input'; 
 import {MatButtonModule} from '@angular/material/button';
-import { AsistenciaComponent } from './asistencia/asistencia.component'; 
+import { AsistenciaComponent } from './asistencia/asistencia.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { AsistenciaComponent } from './asistencia/asistencia.component';
     AlumnosComponent,
     LoginComponent,
     HomeComponent,
-    AsistenciaComponent
+    AsistenciaComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

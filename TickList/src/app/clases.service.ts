@@ -21,7 +21,9 @@ export class ClasesService {
       .then(clase => {
         this.router.navigate(['/clases/', user.uid, clase]);
       })
-      .catch(error => console.log(error));
+      .catch(error => {
+          console.log(error);
+      });
   }
 
   añadirAlumno(clase: string, uid: string, alumno: string) {

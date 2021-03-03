@@ -5,12 +5,14 @@ import { AsistenciaComponent } from './asistencia/asistencia.component';
 import { ClasesComponent } from './clases/clases.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
   {path:'', component:HomeComponent},
   {path:'clases/:uid', component:ClasesComponent},
   {path:'clases/:uid/:clase', component:AlumnosComponent},
   {path:'login', component:LoginComponent},
+  {path:'register', component:RegisterComponent},
   {path:'asistencia/:uid', component:AsistenciaComponent},
 ];
 

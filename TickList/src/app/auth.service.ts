@@ -25,25 +25,36 @@ export class AuthService {
     }
   }))
 
-  login(){
+  login() {
     this.auth.signInWithEmailAndPassword(this.email, this.contrase)
-    .then( user => {
-      this.toastr.success('Login realizado como '+user.user?.email,'LOGIN')
-      this.router.navigate(['/']);
-    })
-    .catch( error =>{
-      if(error.code==='auth/wrong-password'){
-        this.toastr.error('La contraseña es incorrecta','ERRO LOGIN')
-      } else if(error.code==='auth/user-not-found'){
-        this.toastr.error('El email es invalido','ERROR LOGIN')
-      } 
-    });
+      .then(user => {
+        this.toastr.success('Login realizado como ' + user.user?.email, 'LOGIN')
+        this.router.navigate(['/']);
+      })
+      .catch(error => {
+        if (error.code === 'auth/wrong-password') {
+          this.toastr.error('La contraseña es incorrecta', 'ERRO LOGIN')
+        } else if (error.code === 'auth/user-not-found') {
+          this.toastr.error('El email es invalido', 'ERROR LOGIN')
+        }
+      });
+      
+    }
     
+    logout() {
+      this.auth.signOut()
+      this.toastr.success('Logout realizado como ', 'LOG OUT')
+    }
+    
+    register(email: string, password: string) {
+      return this.auth.createUserWithEmailAndPassword(email, password)
+      .then((result) => {
+        this.toastr.success('Cuenta creada correctamente', 'REGISTER')
+        this.router.navigate(['/']);
+        console.log(result.user)
+        
+      }).catch((error) => {
+        this.toastr.error(error.message, 'REGISTER')
+      })
   }
-
-  logout() {
-    this.auth.signOut()
-    this.toastr.success('Logout realizado como ','LOG OUT')
-  }
-
 }
