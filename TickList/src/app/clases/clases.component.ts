@@ -38,7 +38,11 @@ export class ClasesComponent implements OnInit {
 
   agregarClase(user:any){
     this.clases.añadirClase(this.nombre,user)
-    console.log(user)
+    //console.log(user)
+  }
+
+  eliminarClase(nombre:string){
+    this.clases.deleteClases(this.uid,nombre);
   }
 
 }

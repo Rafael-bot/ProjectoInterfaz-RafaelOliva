@@ -19,15 +19,41 @@ export class ClasesService {
     }
     this.db.object(path).set(c)
       .then(clase=>{
-        this.router.navigate(['/clases/', '1']);
+        this.router.navigate(['/clases/',user.uid,clase]);
       })
       .catch(error => console.log(error));
   }
 
+  añadirAlumno(clase: string, uid: string,alumno:string ) {
+    const path = `clases/${uid}/${clase}/alumnos/${alumno}`
+    const a = {
+      nombre: alumno,
+    }
+    this.db.object(path).set(a)
+      .catch(error => console.log(error));
+  }
+
+
   getClases(uid:string){
     const path = `clases/${uid}`
-    console.log(this.db.list(path).snapshotChanges())
+    //console.log(this.db.list(path).snapshotChanges())
     return this.db.list(path).snapshotChanges();
+  }
+
+  getAlumnos(uid:string, clase:string){
+    const path = `clases/${uid}/${clase}/alumnos`
+    //console.log(this.db.list(path).snapshotChanges())
+    return this.db.list(path).snapshotChanges();
+  }
+
+  deleteClases(uid:string, nombre:string){
+    const path = `clases/${uid}/${nombre}`
+    return this.db.object(path).remove();
+  }
+
+  deleteAlumno(uid:string, clase:string, alumno:string){
+    const path = `clases/${uid}/${clase}/alumnos/${alumno}`
+    return this.db.object(path).remove();
   }
 
 }

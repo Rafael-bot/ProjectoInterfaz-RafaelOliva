@@ -1,18 +1,27 @@
 <div class="container" *ngIf="auth.user | async as user">
   <div class="row m-3 center-block" *ngFor="let clase of classs">
     <div class="col-12">
-      <a href="/clases/1" class="style-none">
-        <mat-card class="colorClases">
-          <p class="text-center">{{clase.nombre}}</p>
-        </mat-card>
-      </a>
+      <mat-card class="colorClases">
+        <div class="container">
+          <div class="row">
+            <div class="col-11">
+              <a [routerLink]="[clase.nombre]" class="style-none">
+                <p class="text-center">{{clase.nombre}}
+              </a>
+            </div>
+            <div class="col-1">
+              <button (click)="eliminarClase(clase.nombre)" class="btn">
+                <img src="assets/Img/trash.png"></button>
+            </div>
+          </div>
+        </div>
+      </mat-card>
     </div>
   </div>
   <div class="row m-3 center-block">
     <div class="col-12">
       <mat-accordion>
         <mat-expansion-panel>
-
           <mat-expansion-panel-header>
             <mat-panel-title>
               <button class="btn btn-sm btn-block button"><img class="h-75" src="./assets/Img/mas.png"></button>
@@ -23,11 +32,13 @@
 
             <form #replyForm1="ngForm" fxFlex fxLayout="row" fxLayoutAlign="start center">
               <div class="row m-3 center-block form-group">
-                <input matInput type="text" class="forms-control" placeholder="Class" [(ngModel)]="nombre" name="nombre" required>
+                <input matInput type="text" class="forms-control" placeholder="Class" [(ngModel)]="nombre" name="nombre"
+                  required>
               </div>
               <div class="row m-3 center-block">
                 <div class="col-12">
-                  <button class="btn btn-success btn-block my-auto py-revert ml-3 " (click)='agregarClase(user)'>Add</button>
+                  <button class="btn btn-success btn-block my-auto py-revert ml-3 "
+                    (click)='agregarClase(user)'>Add</button>
                 </div>
               </div>
             </form>

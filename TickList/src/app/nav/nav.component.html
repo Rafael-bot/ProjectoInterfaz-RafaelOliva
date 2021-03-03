@@ -1,12 +1,15 @@
 <nav class="navbar navbar-inverse bg-light" *ngIf="auth.user | async as user; else login">
     <div class="container-fluid">
-        <div class="navbar-header">
+        <ul class="navbar-header">
             <a class="navbar-brand" [routerLink]="['/']" id="tituloLogo">
                 <img src="./assets/Img/logo-sin-fondo.png" width="30" height="30" class="d-inline-block align-top"
                     alt="">
                 TickList
             </a>
-        </div>
+            <a class="navbar-items" [routerLink]="['clases',user.uid]" id="tituloLogo">
+                Class
+            </a>
+        </ul>
         <ul class="nav navbar-nav navbar-center">
             <li>{{user.email}}</li>
         </ul>

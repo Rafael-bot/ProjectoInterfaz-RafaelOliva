@@ -1,1 +1,51 @@
-<p>alumnos works!</p>
+<div class="col-xs-12 text-center m-3">
+    <h1>{{nombreClase}}</h1>
+</div>
+<div class="container alumnos">
+    <ol>
+        <div class="row" *ngFor="let alumno of alumnos">
+            <div class="col-lg-8">
+                <li class="m-3">{{alumno.nombre}}</li>
+            </div>
+            <div class="col-lg-2">
+                <button class="btn"><img src="assets/Img/checked.png"></button>
+                <button class="btn"><img src="assets/Img/cancel.png"></button>
+            </div>
+            <div class="col-lg-2">
+                <button class="btn" (click)="eliminarAlumno(alumno.nombre)"><img src="assets/Img/trash.png"></button>
+            </div>
+        </div>
+    </ol>
+    <div class="row">
+        <div class="col-lg-9">
+            <mat-accordion>
+                <mat-expansion-panel>
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      <button class="btn btn-sm btn-block button"><img class="h-75" src="./assets/Img/mas.png"></button>
+                    </mat-panel-title>
+                  </mat-expansion-panel-header>
+        
+                  <div class="reply-form" fxFlex="0 0 auto" fxLayout="row" fxLayoutAlign="center center">
+        
+                    <form #replyForm1="ngForm" fxFlex fxLayout="row" fxLayoutAlign="start center">
+                      <div class="row m-3 center-block form-group">
+                        <input matInput type="text" class="forms-control" placeholder="Student" [(ngModel)]="nombreAlumno" name="nombre"
+                          required>
+                      </div>
+                      <div class="row m-3 center-block">
+                        <div class="col-12">
+                          <button class="btn btn-success btn-block my-auto py-revert ml-3" (click)="agregarAlumno()">Add</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </mat-expansion-panel>
+              </mat-accordion>
+            
+        </div>
+        <div class="col-lg-3">
+            <button class="btn btn-success h-100 w-100">Send</button>
+        </div>
+    </div>
+</div>

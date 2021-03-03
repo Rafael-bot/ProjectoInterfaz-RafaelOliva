@@ -29,6 +29,7 @@ export class AuthService {
     this.auth.signInWithEmailAndPassword(this.email, this.contrase)
     .then( user => {
       this.toastr.success('Login realizado como '+user.user?.email,'LOGIN')
+      this.router.navigate(['/']);
     })
     .catch( error =>{
       if(error.code==='auth/wrong-password'){
@@ -36,9 +37,8 @@ export class AuthService {
       } else if(error.code==='auth/user-not-found'){
         this.toastr.error('El email es invalido','ERROR LOGIN')
       } 
-      
     });
-    this.router.navigate(['/']);
+    
   }
 
   logout() {
