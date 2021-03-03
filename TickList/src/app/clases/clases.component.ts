@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { ClasesService } from '../clases.service';
 import { ActivatedRoute, Params } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-clases',
@@ -10,7 +11,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 })
 export class ClasesComponent implements OnInit {
 
-  constructor(public clases: ClasesService, public auth: AuthService, private rutaActiva: ActivatedRoute){ }
+  constructor(public clases: ClasesService, public auth: AuthService, private rutaActiva: ActivatedRoute,  private toastr: ToastrService){ }
 
   classs:any = [];
   nombre!:string;
@@ -37,7 +38,11 @@ export class ClasesComponent implements OnInit {
   }
 
   agregarClase(user:any){
-    this.clases.añadirClase(this.nombre,user)
+    if(this.nombre){
+      this.clases.añadirClase(this.nombre,user)
+    } else {
+      this.toastr.error('No has introducido el nombre de la clase', 'CLASS')
+    }
     //console.log(user)
   }
 

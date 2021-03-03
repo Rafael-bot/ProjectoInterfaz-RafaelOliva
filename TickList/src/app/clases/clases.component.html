@@ -32,13 +32,12 @@
 
             <form #replyForm1="ngForm" fxFlex fxLayout="row" fxLayoutAlign="start center">
               <div class="row m-3 center-block form-group">
-                <input matInput type="text" class="forms-control" placeholder="Class" [(ngModel)]="nombre" name="nombre"
+                <input matInput minlength="2" type="text" class="forms-control" placeholder="Class" [(ngModel)]="nombre" name="nombre"
                   required>
               </div>
               <div class="row m-3 center-block">
                 <div class="col-12">
-                  <button type="submit" class="btn btn-success btn-block my-auto py-revert ml-3 "
-                    (click)='agregarClase(user)'>Add</button>
+                  <button type="submit" (click)='agregarClase(user)' class="btn btn-success btn-block my-auto py-revert ml-3 ">Add</button>
                 </div>
               </div>
             </form>

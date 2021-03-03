@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { ClasesService } from '../clases.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { ClasesService } from '../clases.service';
 })
 export class AlumnosComponent implements OnInit {
 
-  constructor(private rutaActiva: ActivatedRoute, public clases: ClasesService) { }
+  constructor(private rutaActiva: ActivatedRoute, public clases: ClasesService, private toastr: ToastrService) { }
 
   uid!:string;
   nombreClase!:string;
@@ -24,7 +25,11 @@ export class AlumnosComponent implements OnInit {
   }
 
   agregarAlumno(){
-    this.clases.añadirAlumno(this.nombreClase, this.uid, this.nombreAlumno);
+    if(this.nombreAlumno){
+      this.clases.añadirAlumno(this.nombreClase, this.uid, this.nombreAlumno);
+    }else{
+      this.toastr.error('No has introducido el nombre del alumno', 'STUDENT')
+    }
     //console.log(user)
   }
 
