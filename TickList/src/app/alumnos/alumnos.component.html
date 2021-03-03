@@ -8,8 +8,8 @@
                 <li class="m-3">{{alumno.nombre}}</li>
             </div>
             <div class="col-lg-2">
-                <button class="btn"><img src="assets/Img/checked.png"></button>
-                <button class="btn"><img src="assets/Img/cancel.png"></button>
+                <button class="btn" #btn1 (click)="haVenido(); btn2.hidden=true"><img src="assets/Img/checked.png"></button>
+                <button class="btn" #btn2 (click)="btn1.hidden=true"><img src="assets/Img/cancel.png"></button>
             </div>
             <div class="col-lg-2">
                 <button class="btn" (click)="eliminarAlumno(alumno.nombre)"><img src="assets/Img/trash.png"></button>
@@ -45,7 +45,7 @@
             
         </div>
         <div class="col-lg-3">
-            <button class="btn btn-success h-100 w-100">Send</button>
+            <button class="btn btn-success h-100 w-100" (click)="enviarAsistencias()">Send</button>
         </div>
     </div>
 </div>

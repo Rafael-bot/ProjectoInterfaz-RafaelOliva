@@ -18,13 +18,13 @@ export class ClasesService {
       profe: user.email
     }
     this.db.object(path).set(c)
-      .then(clase=>{
-        this.router.navigate(['/clases/',user.uid,clase]);
+      .then(clase => {
+        this.router.navigate(['/clases/', user.uid, clase]);
       })
       .catch(error => console.log(error));
   }
 
-  añadirAlumno(clase: string, uid: string,alumno:string ) {
+  añadirAlumno(clase: string, uid: string, alumno: string) {
     const path = `clases/${uid}/${clase}/alumnos/${alumno}`
     const a = {
       nombre: alumno,
@@ -34,24 +34,44 @@ export class ClasesService {
   }
 
 
-  getClases(uid:string){
+  añadirAsistencia(uid: string, clase: string, asistencia: number, dateBody: any, dateRuta:any) {
+    const path = `asistencia/${uid}/${dateRuta}`
+    const as = {
+      asistencia: asistencia,
+      clase: clase,
+      date: dateBody
+    }
+    this.db.object(path).set(as)
+      .then(clase => {
+        this.router.navigate(['/asistencia/', uid]);
+      })
+      .catch(error => console.log(error));
+  }
+
+  getAsistencia(uid: string) {
+    const path = `asistencia/${uid}`
+    //console.log(this.db.list(path).snapshotChanges())
+    return this.db.list(path).snapshotChanges();
+  }
+
+  getClases(uid: string) {
     const path = `clases/${uid}`
     //console.log(this.db.list(path).snapshotChanges())
     return this.db.list(path).snapshotChanges();
   }
 
-  getAlumnos(uid:string, clase:string){
+  getAlumnos(uid: string, clase: string) {
     const path = `clases/${uid}/${clase}/alumnos`
     //console.log(this.db.list(path).snapshotChanges())
     return this.db.list(path).snapshotChanges();
   }
 
-  deleteClases(uid:string, nombre:string){
+  deleteClases(uid: string, nombre: string) {
     const path = `clases/${uid}/${nombre}`
     return this.db.object(path).remove();
   }
 
-  deleteAlumno(uid:string, clase:string, alumno:string){
+  deleteAlumno(uid: string, clase: string, alumno: string) {
     const path = `clases/${uid}/${clase}/alumnos/${alumno}`
     return this.db.object(path).remove();
   }

@@ -1,0 +1,18 @@
+<div class="container">
+    <table class="table m-3">
+        <thead>
+          <tr>
+            <th scope="col">Class</th>
+            <th scope="col">Assistance</th>
+            <th scope="col">Date</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let asistencia of asistencias">
+          <tr>
+            <td>{{asistencia.clase}}</td>
+            <td>{{asistencia.asistencia}}</td>
+            <td>{{asistencia.date}}</td>
+          </tr>
+        </tbody>
+      </table>
+</div>

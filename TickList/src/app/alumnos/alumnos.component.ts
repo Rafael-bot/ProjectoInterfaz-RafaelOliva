@@ -15,6 +15,7 @@ export class AlumnosComponent implements OnInit {
   nombreClase!:string;
   nombreAlumno!:string;
   alumnos:any = [];
+  asistencia:number = 0;
 
   ngOnInit(): void {
     this.uid = this.rutaActiva.snapshot.params.uid;
@@ -43,6 +44,17 @@ export class AlumnosComponent implements OnInit {
 
   eliminarAlumno(nombre:string){
     this.clases.deleteAlumno(this.uid,this.nombreClase,nombre);
+  }
+
+  haVenido(){
+    this.asistencia++;
+  }
+  
+  enviarAsistencias(){
+    //console.log(this.asistencia)
+    const dateBody = new Date().toLocaleString();
+    const dateRuta = new Date();
+    this.clases.añadirAsistencia(this.uid,this.nombreClase,this.asistencia, dateBody, dateRuta);
   }
 
 }
